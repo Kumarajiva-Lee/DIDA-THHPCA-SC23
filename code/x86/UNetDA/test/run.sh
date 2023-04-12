@@ -1,0 +1,1 @@
+salloc --exclusive -N 85 -n 338  -p cnCPU  --ntasks-per-node=4  mpirun -n 241  ../../build/dida.exe ./namelists.input : -n 97  ~/.conda/envs/py36/bin/python3.6 ../only_cnn_one.py 241 | tee -a log.out

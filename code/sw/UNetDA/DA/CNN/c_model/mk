@@ -1,0 +1,11 @@
+set -x
+rm -f predict 
+mpicc -w -mhost -mieee  -c main.c
+mpicc -w -mhost -mieee -Iinclude/ -c model/layers.c
+mpicc -w -mhost -mieee -Iinclude/ -c model/utils.c
+
+mpicc -w -mhybrid -o predict utils.o layers.o main.o ./libs/libswdnn.a ./libs/libswblas2.a -lgfortran -lm -lm_slave -z muldefs
+
+rm -f *.o
+
+#sw9gcc -w -mdynamic -o predict predict.o main.o  init_data.o ./libs/libswdnn.a ./libs/libswblas.a -lgfortran -lm -lm_slave -z muldefs

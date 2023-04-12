@@ -1,0 +1,648 @@
+module adv_batch_mod
+
+  use flogger
+  use const_mod
+  use namelist_mod
+  use mesh_mod
+  use time_mod
+  use allocator_mod
+  !use parallel_mod
+  use parallel_zonal_mod
+  use pa_mod
+
+  implicit none
+
+  private
+
+  public adv_batch_type
+
+  integer, public, parameter :: async_q                      = 1
+  integer, public, parameter :: async_qmf_lon                = 2
+  integer, public, parameter :: async_qmf_lat                = 3
+  integer, public, parameter :: async_qmf_lev                = 4
+  integer, public, parameter :: async_adv_tmp                = 5
+
+
+
+  ! Different tracers can be combined into one batch, and adved in different frequencfly.
+  type adv_batch_type
+    type(mesh_type), pointer :: mesh => null()
+    character(10) :: loc  = 'cell'
+    character(30) :: name = ''
+    logical  :: dynamic = .false.
+    integer  :: nstep   = 0 ! Number of dynamic steps for one adv step
+    integer  :: uv_step = 0 ! Step counter for u and v
+    integer  :: we_step = 0 ! Step counter for we
+    integer  :: mf_step = 0 ! Step counter for mass flux
+    integer  :: old     = 1 ! Index for old time level
+    integer  :: new     = 2 ! Index for new time level
+    real(r8) :: dt          ! Advection time step size in seconds
+    character(10), allocatable, dimension(:) :: tracer_names
+    character(30), allocatable, dimension(:) :: tracer_long_names
+    character(10), allocatable, dimension(:) :: tracer_units
+    real(r8), allocatable, dimension(:,:,:,:    ) :: old_m ! Recorded old mass for converting mixing ratio
+    real(r8), allocatable, dimension(:,:,:,:,:,:) :: q
+    real(r8), allocatable, dimension(:,:,:,:    ) :: qmf_lon
+    real(r8), allocatable, dimension(:,:,:,:    ) :: qmf_lat
+    real(r8), allocatable, dimension(:,:,:,:    ) :: qmf_lev
+    real(r8), allocatable, dimension(:,:,:,:    ) :: mfx
+    real(r8), allocatable, dimension(:,:,:,:    ) :: mfy
+    real(r8), allocatable, dimension(:,:,:,:    ) :: m , m0
+    real(r8), allocatable, dimension(:,:,:,:    ) :: u , u0
+    real(r8), allocatable, dimension(:,:,:,:    ) :: v , v0
+    real(r8), allocatable, dimension(:,:,:,:    ) :: we, we0
+    real(r8), allocatable, dimension(:,:,:,:    ) :: cflx ! CFL number along x-axis
+    real(r8), allocatable, dimension(:,:,:,:    ) :: cfly ! CFL number along y-axis
+    real(r8), allocatable, dimension(:,:,:,:    ) :: cflz ! CFL number along z-axis
+    real(r8), allocatable, dimension(:,:,:,:    ) :: divx ! Divergence along x-axis
+    real(r8), allocatable, dimension(:,:,:,:    ) :: divy ! Divergence along y-axis
+    real(r8), allocatable, dimension(:,:,:,:    ) :: qx   ! Tracer mixing ratio due to advective operator along x axis
+    real(r8), allocatable, dimension(:,:,:,:) :: qy   ! Tracer mixing ratio due to advective operator along y axis
+    real(r8), allocatable, dimension(:,:,:,:) :: qlx  ! Tracer mixing ratio at left cell edge along x axis
+    real(r8), allocatable, dimension(:,:,:,:) :: qly  ! Tracer mixing ratio at left cell edge along y axis
+    real(r8), allocatable, dimension(:,:,:,:) :: dqx  ! Tracer mixing ratio mismatch (or slope) at cell center along x axis
+    real(r8), allocatable, dimension(:,:,:,:) :: dqy  ! Tracer mixing ratio mismatch (or slope) at cell center along y axis
+    real(r8), allocatable, dimension(:,:,:,:) :: q6x  ! PPM mismatch at cell center along x axis
+    real(r8), allocatable, dimension(:,:,:,:) :: q6y  ! PPM mismatch at cell center along y axis
+    
+    !for adv update_halo
+    type(async_type), allocatable :: async(:)
+
+  contains
+    procedure :: init             => adv_batch_init
+    procedure :: clear            => adv_batch_clear
+    procedure :: allocate_tracers => adv_batch_allocate_tracers
+    procedure :: copy_old_m       => adv_batch_copy_old_m
+    procedure :: accum_uv_cell    => adv_batch_accum_uv_cell
+    procedure :: accum_mf_cell    => adv_batch_accum_mf_cell
+    procedure :: accum_we_lev     => adv_batch_accum_we_lev
+    final :: adv_batch_final
+  end type adv_batch_type
+
+contains
+
+  subroutine adv_batch_init(this, mesh, loc, name, dt, dynamic)
+
+    class(adv_batch_type), intent(inout) :: this
+    type(mesh_type), intent(in), target :: mesh
+    character(*), intent(in) :: loc
+    character(*), intent(in) :: name
+    real(r8), intent(in) :: dt
+    logical, intent(in) :: dynamic
+    integer :: i
+
+    call this%clear()
+
+    this%mesh      => mesh
+    this%loc       = loc
+    this%name      = name
+    this%dt        = dt
+    this%dynamic   = dynamic
+    this%nstep     = dt / dt_dyn
+    this%uv_step   = 0
+    this%we_step   = 0
+    this%mf_step   = 0
+
+    select case (loc)
+    case ('cell')
+      call allocate_array(mesh, this%old_m  , member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%mfx    , member_num, half_lon=.true., full_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%mfy    , member_num, full_lon=.true., half_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%m      , member_num, full_lon=.true., full_lat=.true., half_lev=.true.)
+      call allocate_array(mesh, this%m0     , member_num, full_lon=.true., full_lat=.true., half_lev=.true.)
+      call allocate_array(mesh, this%u      , member_num, half_lon=.true., full_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%u0     , member_num, half_lon=.true., full_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%v      , member_num, full_lon=.true., half_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%v0     , member_num, full_lon=.true., half_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%we     , member_num, full_lon=.true., full_lat=.true., half_lev=.true.)
+      call allocate_array(mesh, this%we0    , member_num, full_lon=.true., full_lat=.true., half_lev=.true.)
+      call allocate_array(mesh, this%cflx   , member_num, half_lon=.true., full_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%cfly   , member_num, full_lon=.true., half_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%cflz   , member_num, full_lon=.true., full_lat=.true., half_lev=.true.)
+      call allocate_array(mesh, this%divx   , member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+      call allocate_array(mesh, this%divy   , member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+      select case (adv_scheme)
+      case ('ffsl')
+        call allocate_array(mesh, this%qx   , member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+        call allocate_array(mesh, this%qy   , member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+        if (ffsl_flux_type == 'ppm') then
+          call allocate_array(mesh, this%qlx, member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+          call allocate_array(mesh, this%qly, member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+          call allocate_array(mesh, this%dqx, member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+          call allocate_array(mesh, this%dqy, member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+          call allocate_array(mesh, this%q6x, member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+          call allocate_array(mesh, this%q6y, member_num, full_lon=.true., full_lat=.true., full_lev=.true.)
+        end if
+      end select
+    case default
+      call log_error('Invalid grid location ' // trim(loc) // '!', __FILE__, __LINE__)
+    end select
+
+    call time_add_alert(name, seconds=dt, first_alert=.true.)
+
+    allocate(this%async(async_adv_num))
+    do i = 1 , async_adv_num
+      call this%async(i)%init(30,30)
+    end do
+
+
+  end subroutine adv_batch_init
+
+  subroutine adv_batch_clear(this)
+
+    class(adv_batch_type), intent(inout) :: this
+
+    this%mesh      => null()
+    this%loc       = 'cell'
+    this%name      = ''
+    this%dt        = 0
+    this%dynamic   = .false.
+    this%nstep     = 0
+    this%uv_step   = 0
+    this%we_step   = 0
+    this%mf_step   = 0
+
+    if (allocated(this%tracer_names     )) deallocate(this%tracer_names     )
+    if (allocated(this%tracer_long_names)) deallocate(this%tracer_long_names)
+    if (allocated(this%tracer_units     )) deallocate(this%tracer_units     )
+
+    if (allocated(this%old_m  )) deallocate(this%old_m  )
+    if (allocated(this%q      )) deallocate(this%q      )
+    if (allocated(this%qmf_lon)) deallocate(this%qmf_lon)
+    if (allocated(this%qmf_lat)) deallocate(this%qmf_lat)
+    if (allocated(this%qmf_lev)) deallocate(this%qmf_lev)
+    if (allocated(this%mfx    )) deallocate(this%mfx    )
+    if (allocated(this%mfy    )) deallocate(this%mfy    )
+    if (allocated(this%m      )) deallocate(this%m      )
+    if (allocated(this%u      )) deallocate(this%u      )
+    if (allocated(this%v      )) deallocate(this%v      )
+    if (allocated(this%m0     )) deallocate(this%m0     )
+    if (allocated(this%u0     )) deallocate(this%u0     )
+    if (allocated(this%v0     )) deallocate(this%v0     )
+    if (allocated(this%we     )) deallocate(this%we     )
+    if (allocated(this%cflx   )) deallocate(this%cflx   )
+    if (allocated(this%cfly   )) deallocate(this%cfly   )
+    if (allocated(this%cflz   )) deallocate(this%cflz   )
+    if (allocated(this%divx   )) deallocate(this%divx   )
+    if (allocated(this%divy   )) deallocate(this%divy   )
+    if (allocated(this%qx     )) deallocate(this%qx     )
+    if (allocated(this%qy     )) deallocate(this%qy     )
+    if (allocated(this%qlx    )) deallocate(this%qlx    )
+    if (allocated(this%qly    )) deallocate(this%qly    )
+    if (allocated(this%dqx    )) deallocate(this%dqx    )
+    if (allocated(this%dqy    )) deallocate(this%dqy    )
+    if (allocated(this%q6x    )) deallocate(this%q6x    )
+    if (allocated(this%q6y    )) deallocate(this%q6y    )
+
+  end subroutine adv_batch_clear
+
+  subroutine adv_batch_allocate_tracers(this, ntracer)
+
+    class(adv_batch_type), intent(inout) :: this
+    integer, intent(in) :: ntracer
+
+    allocate(this%tracer_names     (ntracer))
+    allocate(this%tracer_long_names(ntracer))
+    allocate(this%tracer_units     (ntracer))
+
+  end subroutine adv_batch_allocate_tracers
+
+  subroutine adv_batch_copy_old_m(this, m)
+
+    class(adv_batch_type), intent(inout) :: this
+    real(r8), intent(in) :: m(member_num,                            & 
+                              this%mesh%full_ims:this%mesh%full_ime, &
+                              this%mesh%full_jms:this%mesh%full_jme, &
+                              this%mesh%full_kms:this%mesh%full_kme)
+
+    this%old_m = m
+
+  end subroutine adv_batch_copy_old_m
+
+  subroutine adv_batch_accum_uv_cell(this, u, v, dt)
+
+    class(adv_batch_type), intent(inout) :: this
+    real(r8), intent(in) :: u(member_num,                            &
+                              this%mesh%half_ims:this%mesh%half_ime, &
+                              this%mesh%full_jms:this%mesh%full_jme, &
+                              this%mesh%full_kms:this%mesh%full_kme)
+    real(r8), intent(in) :: v(member_num,                            &
+                              this%mesh%full_ims:this%mesh%full_ime, &
+                              this%mesh%half_jms:this%mesh%half_jme, &
+                              this%mesh%full_kms:this%mesh%full_kme)
+    real(r8), intent(in), optional :: dt
+
+    real(r8) work(member_num, this%mesh%full_ids:this%mesh%full_ide, this%mesh%full_nlev)
+    real(r8) pole(member_num, this%mesh%full_nlev)
+    real(r8) dt_
+    real(r8) dx, x0, x1, x2, x3, u1, u2, u3, u4
+    real(r8) dy, y0, y1, y2, y3, v1, v2, v3, v4
+    integer i, j, k, l
+
+#ifdef Detail_Time
+  call Get_Start_Time(cal_time_start)
+  call Add_Function("adv_batch_accum_uv_cell")
+  call Indent_In()
+#endif
+
+    dt_ = merge(dt, this%dt, present(dt))
+
+    associate (mesh => this%mesh)
+    if (this%uv_step == -1) then
+      this%u = this%u0
+      this%v = this%v0
+      this%uv_step = 1
+    end if
+    if (this%uv_step == 0) then
+      this%u = u
+      this%v = v
+    else if (this%uv_step == this%nstep) then
+      this%u = (this%u + u) / (this%nstep + 1)
+      this%v = (this%v + v) / (this%nstep + 1)
+      this%u0 = u
+      this%v0 = v
+    else
+      this%u = this%u + u
+      this%v = this%v + v
+    end if
+    this%uv_step = merge(0, this%uv_step + 1, this%dynamic)
+    if (this%dynamic .or. this%uv_step > this%nstep) then
+      if (.not. this%dynamic) this%uv_step = -1
+      select case (depart_point_scheme)
+      case ('eul')
+        do k = mesh%full_kds, mesh%full_kde
+          do j = mesh%full_jds_no_pole, mesh%full_jde_no_pole
+            dx = mesh%de_lon(j)
+            do i = mesh%half_ids, mesh%half_ide
+              this%cflx(:,i,j,k) = this%u(:,i,j,k) * dt_ / dx
+            end do
+          end do
+          do j = mesh%half_jds, mesh%half_jde
+            dy = mesh%de_lat(j)
+            do i = mesh%full_ids, mesh%full_ide
+              this%cfly(:,i,j,k) = this%v(:,i,j,k) * dt_ / dy
+            end do
+          end do
+        end do
+      case ('rk4')
+        ! Calculate CFL numbers and divergence along each axis.
+          !   do k = mesh%full_kds, mesh%full_kde
+          !     do j = mesh%full_jds_no_pole, mesh%full_jde_no_pole
+          !       dx = mesh%de_lon(j)
+          !       do i = mesh%half_ids, mesh%half_ide
+          !         x0 = radius * mesh%half_lon(i) * mesh%full_cos_lat(j)
+          !         ! Stage 1
+          !         u1 = this%u(i,j,k)
+          !         x1 = x0 + dt_ / 2 * u1
+          !         ! Stage 2
+          !         l = floor(i + (x1 - x0) / dx)
+          !         u2 = (                                                                          &
+          !           (radius * mesh%half_lon(l+1) * mesh%full_cos_lat(j) - x1) * this%u(l  ,j,k) + &
+          !           (x1 - radius * mesh%half_lon(l  ) * mesh%full_cos_lat(j)) * this%u(l+1,j,k)   &
+          !         ) / dx
+          !         x2 = x0 + dt_ / 2 * u2
+          !         ! Stage 3
+          !         l = floor(i + (x2 - x0) / dx)
+          !         u3 = (                                                                          &
+          !           (radius * mesh%half_lon(l+1) * mesh%full_cos_lat(j) - x2) * this%u(l  ,j,k) + &
+          !           (x2 - radius * mesh%half_lon(l  ) * mesh%full_cos_lat(j)) * this%u(l+1,j,k)   &
+          !         ) / dx
+          !         x3 = x0 + dt_ * u3
+          !         ! Stage 4
+          !         l = floor(i + (x3 - x0) / dx)
+          !         u4 = (                                                                          &
+          !           (radius * mesh%half_lon(l+1) * mesh%full_cos_lat(j) - x3) * this%u(l  ,j,k) + &
+          !           (x3 - radius * mesh%half_lon(l  ) * mesh%full_cos_lat(j)) * this%u(l+1,j,k)   &
+          !         ) / dx
+          !         ! Final stage
+          !         this%cflx(i,j,k) = (u1 + 2 * u2 + 2 * u3 + u4) / 6 * dt_ / dx
+          !         if (abs(this%cflx(i,j,k)) > mesh%lon_hw) then
+          !           call log_error('cflx exceeds mesh%lon_hw ' // &
+          !                          to_str(mesh%lon_hw) // ' at j=' // to_str(j) // '!', __FILE__, __LINE__)
+          !         end if
+          !       end do
+          !     end do
+          !     do j = mesh%half_jds, mesh%half_jde
+          !       dy = mesh%de_lat(j)
+          !       do i = mesh%full_ids, mesh%full_ide
+          !         y0 = radius * mesh%half_lat(j)
+          !         ! Stage 1
+          !         v1 = this%v(i,j,k)
+          !         y1 = y0 + dt_ / 2 * v1
+          !         ! Stage 2
+          !         l = floor(j + (y1 - y0) / dy)
+          !         if (l < 1 .or. l > global_mesh%half_nlat - 1) then
+          !           v2 = v1
+          !         else
+          !           v2 = (                                                   &
+          !             (radius * mesh%half_lat(l+1) - y1) * this%v(i,l  ,k) + &
+          !             (y1 - radius * mesh%half_lat(l  )) * this%v(i,l+1,k)   &
+          !           ) / dy
+          !         end if
+          !         y2 = y0 + dt_ / 2 * v2
+          !         ! Stage 3
+          !         l = floor(j + (y2 - y0) / dy)
+          !         if (l < 1 .or. l > global_mesh%half_nlat - 1) then
+          !           v3 = v1
+          !         else
+          !           v3 = (                                                   &
+          !             (radius * mesh%half_lat(l+1) - y2) * this%v(i,l  ,k) + &
+          !             (y2 - radius * mesh%half_lat(l  )) * this%v(i,l+1,k)   &
+          !           ) / dy
+          !         end if
+          !         y3 = y0 + dt_ * v3
+          !         ! Stage 4
+          !         l = floor(j + (y3 - y0) / dy)
+          !         if (l < 1 .or. l > global_mesh%half_nlat - 1) then
+          !           v4 = v1
+          !         else
+          !           v4 = (                                                   &
+          !             (radius * mesh%half_lat(l+1) - y3) * this%v(i,l  ,k) + &
+          !             (y3 - radius * mesh%half_lat(l  )) * this%v(i,l+1,k)   &
+          !           ) / dy
+          !         end if
+          !         ! Final stage
+          !         this%cfly(i,j,k) = (v1 + 2 * v2 + 2 * v3 + v4) / 6 * dt_ / dy
+          !         if (abs(this%cfly(i,j,k)) > 1) then
+          !           call log_error('cfly exceeds 1 at j=' // to_str(j) // ', k=' // to_str(k) // '!', __FILE__, __LINE__)
+          !         end if
+          !       end do
+          !     end do
+          !   end do
+      case default
+        call log_error('Unknown depart_point_scheme "' // trim(depart_point_scheme) // '"!')
+      end select
+      do k = mesh%full_kds, mesh%full_kde
+        do j = mesh%full_jds_no_pole, mesh%full_jde_no_pole
+          do i = mesh%full_ids, mesh%full_ide
+            this%divx(:,i,j,k) = (this%u(:,i,j,k) - this%u(:,i-1,j,k)) * mesh%le_lon(j) / mesh%area_cell(j)
+            this%divy(:,i,j,k) = (this%v(:,i,j  ,k) * mesh%le_lat(j  ) - &
+                                this%v(:,i,j-1,k) * mesh%le_lat(j-1)) / mesh%area_cell(j)
+          end do
+        end do
+      end do
+      if (mesh%has_south_pole()) then
+        j = mesh%full_jds
+        do k = mesh%full_kds, mesh%full_kde
+          do i = mesh%full_ids, mesh%full_ide
+            work(:,i,k) = this%v(:,i,j,k)
+          end do
+        end do
+        call zonal_sum_member(proc%zonal_circle, work, pole)
+        pole = pole * mesh%le_lat(j) / global_mesh%full_nlon / mesh%area_cell(j)
+        do k = mesh%full_kds, mesh%full_kde
+          do i = mesh%full_ids, mesh%full_ide
+            this%divy(:,i,j,k) = pole(:,k)
+          end do
+        end do
+      end if
+      if (mesh%has_north_pole()) then
+        j = mesh%full_jde
+        do k = mesh%full_kds, mesh%full_kde
+          do i = mesh%full_ids, mesh%full_ide
+            work(:,i,k) = -this%v(:,i,j-1,k)
+          end do
+        end do
+        call zonal_sum_member(proc%zonal_circle, work, pole)
+        pole = pole * mesh%le_lat(j-1) / global_mesh%full_nlon / mesh%area_cell(j)
+        do k = mesh%full_kds, mesh%full_kde
+          do i = mesh%full_ids, mesh%full_ide
+            this%divy(:,i,j,k) = pole(:,k)
+          end do
+        end do
+      end if
+    end if
+    end associate
+
+#ifdef Detail_Time
+  call Get_End_Time(cal_time_end)
+  cal_time = cal_time + cal_time_end - cal_time_start
+  call Indent_Out()
+#endif
+
+  end subroutine adv_batch_accum_uv_cell
+
+  subroutine adv_batch_accum_mf_cell(this, mfx, mfy)
+
+    class(adv_batch_type), intent(inout) :: this
+    real(r8), intent(in) :: mfx(member_num,                            &
+                                this%mesh%half_ims:this%mesh%half_ime, &
+                                this%mesh%full_jms:this%mesh%full_jme, &
+                                this%mesh%full_kms:this%mesh%full_kme)
+    real(r8), intent(in) :: mfy(member_num,                            &
+                                this%mesh%full_ims:this%mesh%full_ime, &
+                                this%mesh%half_jms:this%mesh%half_jme, &
+                                this%mesh%full_kms:this%mesh%full_kme)
+
+#ifdef Detail_Time
+  call Get_Start_Time(cal_time_start)
+  call Add_Function("adv_batch_accum_mf_cell")
+  call Indent_In()
+#endif
+
+    if (this%mf_step == -1) then
+      this%mfx = 0
+      this%mfy = 0
+      this%mf_step = 1
+    end if
+    if (this%mf_step == 0) then
+      this%mfx = mfx
+      this%mfy = mfy
+    else if (this%mf_step == this%nstep) then
+      this%mfx = (this%mfx + mfx) / this%nstep
+      this%mfy = (this%mfy + mfy) / this%nstep
+    else
+      this%mfx = this%mfx + mfx
+      this%mfy = this%mfy + mfy
+    end if
+    this%mf_step = merge(0, this%mf_step + 1, this%dynamic)
+    if (.not. this%dynamic .and. this%mf_step > this%nstep) this%mf_step = -1
+
+#ifdef Detail_Time
+  call Get_End_Time(cal_time_end)
+  cal_time = cal_time + cal_time_end - cal_time_start
+  call Indent_Out()
+#endif
+
+  end subroutine adv_batch_accum_mf_cell
+
+  subroutine adv_batch_accum_we_lev(this, we, m, dt)
+
+    class(adv_batch_type), intent(inout) :: this
+    real(r8), intent(in) :: we(member_num,                            &
+                               this%mesh%full_ims:this%mesh%full_ime, &
+                               this%mesh%full_jms:this%mesh%full_jme, &
+                               this%mesh%half_kms:this%mesh%half_kme)
+    real(r8), intent(in) :: m (member_num,                            &
+                               this%mesh%full_ims:this%mesh%full_ime, &
+                               this%mesh%full_jms:this%mesh%full_jme, &
+                               this%mesh%half_kms:this%mesh%half_kme)
+    real(r8), intent(in), optional :: dt
+
+    real(r8) dt_
+    real(r8) z0, z1, z2, z3, w1, w2, w3, w4, deta
+    integer i, j, k, l, ks, ke, s
+
+#ifdef Detail_Time
+  call Get_Start_Time(cal_time_start)
+  call Add_Function("adv_batch_accum_we_lev")
+  call Indent_In()
+#endif
+
+    dt_ = merge(dt, this%dt, present(dt))
+
+    associate (mesh => this%mesh)
+    if (this%we_step == -1) then
+      this%we = this%we0
+      this%m  = this%m0
+      this%we_step = 1
+    end if
+    if (this%we_step == 0) then
+      this%we = we
+      this%m  = m
+    else if (this%we_step == this%nstep) then
+      this%we = (this%we + we) / (this%nstep + 1)
+      this%m  = (this%m  + m ) / (this%nstep + 1)
+      this%we0 = we
+      this%m0  = m
+    else
+      this%we = this%we + we
+      this%m  = this%m  + m
+    end if
+    this%we_step = merge(0, this%we_step + 1, this%dynamic)
+    if (this%dynamic .or. this%we_step > this%nstep) then
+      if (.not. this%dynamic) this%we_step = -1
+      select case (depart_point_scheme)
+      case ('eul')
+        do k = mesh%half_kds + 1, mesh%half_kde - 1
+          do j = mesh%full_jds, mesh%full_jde
+            do i = mesh%full_ids, mesh%full_ide
+              this%cflz(:,i,j,k) = this%we(:,i,j,k) / this%m(:,i,j,k) * dt_
+            end do
+          end do
+        end do
+      case ('rk4')
+          !   do k = mesh%half_kds + 1, mesh%half_kde - 1
+          !     do j = mesh%full_jds, mesh%full_jde
+          !       do i = mesh%full_ids, mesh%full_ide
+          !         z0 = mesh%half_lev(k)
+          !         ! Stage 1
+          !         w1 = this%we(i,j,k) / this%m(i,j,k) * mesh%half_dlev(k)
+          !         z1 = z0 + dt_ / 2 * w1
+          !         ! Stage 2
+          !         if (w1 > 0) then
+          !           do l = k, mesh%full_kde
+          !             if (mesh%half_lev(l) <= z1 .and. z1 <= mesh%half_lev(l+1)) exit
+          !           end do
+          !           if (l == mesh%full_kde + 1) then
+          !             call log_error('cflz exceeds range at i=' // to_str(i) // &
+          !                                                ', j=' // to_str(j) // &
+          !                                                ', k=' // to_str(k) // '!', __FILE__, __LINE__)
+          !           end if
+          !         else
+          !           do l = k - 1, mesh%full_kds, -1
+          !             if (mesh%half_lev(l) <= z1 .and. z1 <= mesh%half_lev(l+1)) exit
+          !           end do
+          !           if (l == mesh%full_kds - 1) then
+          !             call log_error('cflz exceeds range at i=' // to_str(i) // &
+          !                                                ', j=' // to_str(j) // &
+          !                                                ', k=' // to_str(k) // '!', __FILE__, __LINE__)
+          !           end if
+          !         end if
+          !         w2 = (                                                                                   &
+          !           (mesh%half_lev(l+1) - z1) * this%we(i,j,l  ) / this%m(i,j,l  ) * mesh%half_dlev(l  ) + &
+          !           (z1 - mesh%half_lev(l  )) * this%we(i,j,l+1) / this%m(i,j,l+1) * mesh%half_dlev(l+1)   &
+          !         ) / mesh%full_dlev(l)
+          !         z2 = z0 + dt_ / 2 * w2
+          !         ! Stage 3
+          !         if (w2 > 0) then
+          !           do l = k, mesh%full_kde
+          !             if (mesh%half_lev(l) <= z2 .and. z2 <= mesh%half_lev(l+1)) exit
+          !           end do
+          !           if (l == mesh%full_kde + 1) then
+          !             call log_error('cflz exceeds range at i=' // to_str(i) // &
+          !                                                ', j=' // to_str(j) // &
+          !                                                ', k=' // to_str(k) // '!', __FILE__, __LINE__)
+          !           end if
+          !         else
+          !           do l = k - 1, mesh%full_kds, -1
+          !             if (mesh%half_lev(l) <= z2 .and. z2 <= mesh%half_lev(l+1)) exit
+          !           end do
+          !           if (l == mesh%full_kds - 1) then
+          !             call log_error('cflz exceeds range at i=' // to_str(i) // &
+          !                                                ', j=' // to_str(j) // &
+          !                                                ', k=' // to_str(k) // '!', __FILE__, __LINE__)
+          !           end if
+          !         end if
+          !         w3 = (                                                                                   &
+          !           (mesh%half_lev(l+1) - z2) * this%we(i,j,l  ) / this%m(i,j,l  ) * mesh%half_dlev(l  ) + &
+          !           (z2 - mesh%half_lev(l  )) * this%we(i,j,l+1) / this%m(i,j,l+1) * mesh%half_dlev(l+1)   &
+          !         ) / mesh%full_dlev(l)
+          !         z3 = z0 + dt_ * w3
+          !         ! Stage 4
+          !         if (w3 > 0) then
+          !           do l = k, mesh%full_kde
+          !             if (mesh%half_lev(l) <= z3 .and. z3 <= mesh%half_lev(l+1)) exit
+          !           end do
+          !           if (l == mesh%full_kde + 1) then
+          !             call log_error('cflz exceeds range at i=' // to_str(i) // &
+          !                                                ', j=' // to_str(j) // &
+          !                                                ', k=' // to_str(k) // '!', __FILE__, __LINE__)
+          !           end if
+          !         else
+          !           do l = k - 1, mesh%full_kds, -1
+          !             if (mesh%half_lev(l) <= z3 .and. z3 <= mesh%half_lev(l+1)) exit
+          !           end do
+          !           if (l == mesh%full_kds - 1) then
+          !             call log_error('cflz exceeds range at i=' // to_str(i) // &
+          !                                                ', j=' // to_str(j) // &
+          !                                                ', k=' // to_str(k) // '!', __FILE__, __LINE__)
+          !           end if
+          !         end if
+          !         w4 = (                                                                                   &
+          !           (mesh%half_lev(l+1) - z3) * this%we(i,j,l  ) / this%m(i,j,l  ) * mesh%half_dlev(l  ) + &
+          !           (z3 - mesh%half_lev(l  )) * this%we(i,j,l+1) / this%m(i,j,l+1) * mesh%half_dlev(l+1)   &
+          !         ) / mesh%full_dlev(l)
+          !         ! Final stage
+          !         deta = (w1 + 2 * w2 + 2 * w3 + w4) / 6 * dt_
+          !         if (deta < 0) then
+          !           ks = k - 1
+          !           ke = mesh%full_kds
+          !           s = -1
+          !         else
+          !           ks = k
+          !           ke = mesh%full_kde
+          !           s = 1
+          !         end if
+          !         deta = abs(deta)
+          !         do l = ks, ke, s
+          !           deta = deta - mesh%full_dlev(l)
+          !           if (deta < 0) then
+          !             this%cflz(i,j,k) = s * ((1 + deta / mesh%full_dlev(l)) + abs(l - ks))
+          !             exit
+          !           end if
+          !         end do
+          !       end do
+          !     end do
+          !   end do
+      end select
+    end if
+    end associate
+
+#ifdef Detail_Time
+  call Get_End_Time(cal_time_end)
+  cal_time = cal_time + cal_time_end - cal_time_start
+  call Indent_Out()
+#endif
+
+  end subroutine adv_batch_accum_we_lev
+
+  subroutine adv_batch_final(this)
+
+    type(adv_batch_type), intent(inout) :: this
+
+    call this%clear()
+
+  end subroutine adv_batch_final
+
+end module adv_batch_mod

@@ -1,0 +1,2 @@
+export PATH=/usr/sw/swgcc/swgcc710-tools-SEA-1208/usr/bin:/usr/sw/swgcc/swgcc710-tools-SEA-1208/usr_sw/bin:$PATH
+export LD_LIBRARY_PATH=/usr/sw/swgcc/swgcc710-tools-SEA-1208/usr/lib:/usr/sw/swgcc/swgcc710-tools-SEA-1208/usr_sw/lib_akernel:$LD_LIBRARY_PATH

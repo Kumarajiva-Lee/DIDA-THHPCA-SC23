@@ -1,0 +1,6 @@
+# The fortran modules provided by this target.
+provides
+ mpal.mod
+ mpal_basic.mod
+ mpal_blas.mod
+ mpal_eig.mod

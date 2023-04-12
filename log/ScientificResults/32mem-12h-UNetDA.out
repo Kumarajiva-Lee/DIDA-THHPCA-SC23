@@ -1,0 +1,8220 @@
+[  ===> ][20230403/14:09:21][M: COUPLER] Start DIDA Program!
+[  ===> ][20230403/14:09:21][M: COUPLER] read namelist:./namelists.input
+[  ===> ][20230403/14:09:21][M: COUPLER] =========== total namelists ========
+[  ===> ][20230403/14:09:21][M: COUPLER] case_name          :cnn_12hour
+[  ===> ][20230403/14:09:21][M: COUPLER] redis_address      :172.16.136.7:6401,172.16.136.7:6402
+[  ===> ][20230403/14:09:21][M: COUPLER] atm_mpas_sceneid   :33
+[  ===> ][20230403/14:09:21][M: COUPLER] num_lon            :360
+[  ===> ][20230403/14:09:21][M: COUPLER] num_lat            :180
+[  ===> ][20230403/14:09:21][M: COUPLER] num_lev            :32
+[  ===> ][20230403/14:09:21][M: COUPLER] atm_mpas2atm_time  :1 days
+[  ===> ][20230403/14:09:21][M: COUPLER] atm_phase_diff     :1800
+[  ===> ][20230403/14:09:21][M: COUPLER] da_endnn_in_seconds:30
+[  ===> ][20230403/14:09:21][M: COUPLER] da_start_time      :2019, 6, 7, 0, 0,
+[  ===> ][20230403/14:09:21][M: COUPLER] end_time           :2019, 6, 12, 0, 0,
+[  ===> ][20230403/14:09:21][M: COUPLER] da_in_seconds      :43200
+[  ===> ][20230403/14:09:21][M: COUPLER] atm_ensemble_total :32
+[  ===> ][20230403/14:09:21][M: COUPLER] atm_ensemble_group :4
+[  ===> ][20230403/14:09:21][M: COUPLER] da_ensemble        :1
+[  ===> ][20230403/14:09:21][M: COUPLER] da_var_name        :ps,u,v,pt
+[  ===> ][20230403/14:09:21][M: COUPLER] da_asynchronous    :0
+[  ===> ][20230403/14:09:21][M: COUPLER] da_mode            :0
+[  ===> ][20230403/14:09:21][M: COUPLER] atm_group          :240
+[  ===> ][20230403/14:09:21][M: COUPLER] atm_group_num      :1
+[  ===> ][20230403/14:09:21][M: COUPLER] atm_stride         :241
+[  ===> ][20230403/14:09:21][M: COUPLER] atm_root           :0
+[  ===> ][20230403/14:09:21][M: COUPLER] da_group           :1
+[  ===> ][20230403/14:09:21][M: COUPLER] da_group_num       :1
+[  ===> ][20230403/14:09:21][M: COUPLER] da_stride          :241
+[  ===> ][20230403/14:09:21][M: COUPLER] da_root            :240
+[  ===> ][20230403/14:09:21][M: COUPLER] init_coupler_config done!
+[  ===> ][20230403/14:09:21][M: COUPLER] =========== COUPLER INFO ========
+[  ===> ][20230403/14:09:21][M: COUPLER] Total PROCS        :241
+[  ===> ][20230403/14:09:21][M: COUPLER] ATM TOTAL PROCS    :240
+[  ===> ][20230403/14:09:21][M: DA][RANK: 0/1] DA MODEL BEGIN!
+[  ===> ][20230403/14:09:21][M: COUPLER] DA TOTAL PROCS     :1
+[  ===> ][20230403/14:09:21][M: COUPLER] MCT ncomps         :5
+[  ===> ][20230403/14:09:21][M: COUPLER] ATM comps          :4
+[  ===> ][20230403/14:09:21][M: COUPLER] DA comps           :1
+[  ===> ][20230403/14:09:21][M: COUPLER] init_coupler done!
+[  ===> ][20230403/14:09:21][M: ATMGROUP 1/4)][RANK: 0/60] ATM MODEL BEGIN!
+[  ===> ][20230403/14:09:21][M: ATMGROUP 3/4)][RANK: 0/60] ATM MODEL BEGIN!
+[  ===> ][20230403/14:09:21][M: ATMGROUP 2/4)][RANK: 0/60] ATM MODEL BEGIN!
+[  ===> ][20230403/14:09:21][M: ATMGROUP 4/4)][RANK: 0/60] ATM MODEL BEGIN!
+ LETKF id           0 global_bx           1 global_by           1
+ LETKF id           0 global_nx           1 global_ny           1
+ LETKF id           0 north_n           0 south_n           0
+ LETKF id           0 lc_num           0 west           1 east           0
+[ Notice][20230403/14:09:21][M: DA][RANK: 0/1] da_couper init
+ =================== GMCORE Parameters ===================
+ case_name           = cnn_12hour
+ nlon                = 360
+ nlat                = 180
+ nlev                = 32
+ num_proc_total      = 60
+ num_proc_lon        = 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ num_proc_lat        = 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ blocked_comm        = false
+ partition_type      = irregular
+ physics_suite       = none
+ pbl_scheme          = ysu
+ hydrostatic         = true
+ nonhydrostatic      = false
+ vert_coord_scheme   = hybrid
+ vert_coord_template = wrf_l32
+ ptop                = 219.40
+ hybrid_coord_p0     =    100000.000000000     
+ dt_dyn              = 240.
+ dt_adv              = 0.00
+ dt_phys             = 0.00
+ max_wave_speed      =    300.000000000000     
+ max_cfl             =   0.500000000000000     
+ filter_coef_a       =    1.00000000000000     
+ filter_coef_b       =   0.400000005960464     
+ filter_coef_c       =   0.200000002980232     
+ filter_coef1_phs    =   0.375000000000000     
+ filter_coef2_phs    =   0.000000000000000E+000
+ filter_lat0_phs     =    60.0000000000000     
+ filter_coef1_pt     =   0.375000000000000     
+ filter_coef2_pt     =   0.000000000000000E+000
+ filter_lat0_pt      =    60.0000000000000     
+ filter_coef1_uv     =   0.375000000000000     
+ filter_coef2_uvs    =   0.000000000000000E+000
+ filter_lat0_uv      =    60.0000000000000     
+ pgf_scheme          = lin97
+ adv_scheme          = ffsl
+ depart_point_scheme = eul
+ limiter_type        = mono
+ ffsl_flux_type      = ppm
+ ke_scheme           = 2
+ ke_cell_wgt         = 0.500
+ pv_scheme           = upwind
+ pv_pole_stokes      = true
+ upwind_order_pv     = 3
+ upwind_wgt_pv       = 1.00
+ time_scheme         = wrfrk3
+ upwind_order        = 3
+ use_topo_smooth     = true
+ topo_smooth_cycles  = 3
+ use_div_damp        = true
+ div_damp_coef2      =   7.812500000000000E-003
+ div_damp_top        = 3.000
+ div_damp_pole       =   0.000000000000000E+000
+ div_damp_lat0       =    90.0000000000000     
+ use_smag_damp       = true
+ smag_damp_coef      = 0.10
+ use_adv             = true
+ use_phy             = true
+ output_h0           = true
+ output_h1           = false
+ output_Agrid        = true
+ member_inside       = 8
+ member_total        = 8
+ vector_outside      = 1
+ use_create_ensemble = false
+ initial_file_type   = time                          
+ initial_interval   = 480
+ =========================================================
+[ Notice][20230403/14:09:21][M: ATMGROUP 1/4)][RANK: 0/60] Model top pressure is 219.40Pa.
+ =================== GMCORE Parameters ===================
+ case_name           = cnn_12hour
+ nlon                = 360
+ nlat                = 180
+ nlev                = 32
+ num_proc_total      = 60
+ num_proc_lon        = 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ num_proc_lat        = 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ blocked_comm        = false
+ partition_type      = irregular
+ physics_suite       = none
+ pbl_scheme          = ysu
+ hydrostatic         = true
+ nonhydrostatic      = false
+ vert_coord_scheme   = hybrid
+ vert_coord_template = wrf_l32
+ ptop                = 219.40
+ hybrid_coord_p0     =    100000.000000000     
+ dt_dyn              = 240.
+ dt_adv              = 0.00
+ dt_phys             = 0.00
+ max_wave_speed      =    300.000000000000     
+ max_cfl             =   0.500000000000000     
+ filter_coef_a       =    1.00000000000000     
+ filter_coef_b       =   0.400000005960464     
+ filter_coef_c       =   0.200000002980232     
+ filter_coef1_phs    =   0.375000000000000     
+ filter_coef2_phs    =   0.000000000000000E+000
+ filter_lat0_phs     =    60.0000000000000     
+ filter_coef1_pt     =   0.375000000000000     
+ filter_coef2_pt     =   0.000000000000000E+000
+ filter_lat0_pt      =    60.0000000000000     
+ filter_coef1_uv     =   0.375000000000000     
+ filter_coef2_uvs    =   0.000000000000000E+000
+ filter_lat0_uv      =    60.0000000000000     
+ pgf_scheme          = lin97
+ adv_scheme          = ffsl
+ depart_point_scheme = eul
+ limiter_type        = mono
+ ffsl_flux_type      = ppm
+ ke_scheme           = 2
+ ke_cell_wgt         = 0.500
+ pv_scheme           = upwind
+ pv_pole_stokes      = true
+ upwind_order_pv     = 3
+ upwind_wgt_pv       = 1.00
+ time_scheme         = wrfrk3
+ upwind_order        = 3
+ use_topo_smooth     = true
+ topo_smooth_cycles  = 3
+ use_div_damp        = true
+ div_damp_coef2      =   7.812500000000000E-003
+ div_damp_top        = 3.000
+ div_damp_pole       =   0.000000000000000E+000
+ div_damp_lat0       =    90.0000000000000     
+ use_smag_damp       = true
+ smag_damp_coef      = 0.10
+ use_adv             = true
+ use_phy             = true
+ output_h0           = true
+ output_h1           = false
+ output_Agrid        = true
+ member_inside       = 8
+ member_total        = 8
+ vector_outside      = 1
+ use_create_ensemble = false
+ initial_file_type   = time                          
+ initial_interval   = 480
+ =========================================================
+[ Notice][20230403/14:09:21][M: ATMGROUP 2/4)][RANK: 0/60] Model top pressure is 219.40Pa.
+ =================== GMCORE Parameters ===================
+ case_name           = cnn_12hour
+ nlon                = 360
+ nlat                = 180
+ nlev                = 32
+ num_proc_total      = 60
+ num_proc_lon        = 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ num_proc_lat        = 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ blocked_comm        = false
+ partition_type      = irregular
+ physics_suite       = none
+ pbl_scheme          = ysu
+ hydrostatic         = true
+ nonhydrostatic      = false
+ vert_coord_scheme   = hybrid
+ vert_coord_template = wrf_l32
+ ptop                = 219.40
+ hybrid_coord_p0     =    100000.000000000     
+ dt_dyn              = 240.
+ dt_adv              = 0.00
+ dt_phys             = 0.00
+ max_wave_speed      =    300.000000000000     
+ max_cfl             =   0.500000000000000     
+ filter_coef_a       =    1.00000000000000     
+ filter_coef_b       =   0.400000005960464     
+ filter_coef_c       =   0.200000002980232     
+ filter_coef1_phs    =   0.375000000000000     
+ filter_coef2_phs    =   0.000000000000000E+000
+ filter_lat0_phs     =    60.0000000000000     
+ filter_coef1_pt     =   0.375000000000000     
+ filter_coef2_pt     =   0.000000000000000E+000
+ filter_lat0_pt      =    60.0000000000000     
+ filter_coef1_uv     =   0.375000000000000     
+ filter_coef2_uvs    =   0.000000000000000E+000
+ filter_lat0_uv      =    60.0000000000000     
+ pgf_scheme          = lin97
+ adv_scheme          = ffsl
+ depart_point_scheme = eul
+ limiter_type        = mono
+ ffsl_flux_type      = ppm
+ =================== GMCORE Parameters ===================
+ case_name           = cnn_12hour
+ nlon                = 360
+ nlat                = 180
+ nlev                = 32
+ num_proc_total      = 60
+ ke_scheme           = 2
+ ke_cell_wgt         = 0.500
+ pv_scheme           = upwind
+ pv_pole_stokes      = true
+ upwind_order_pv     = 3
+ num_proc_lon        = 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ num_proc_lat        = 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ blocked_comm        = false
+ partition_type      = irregular
+ physics_suite       = none
+ pbl_scheme          = ysu
+ hydrostatic         = true
+ nonhydrostatic      = false
+ vert_coord_scheme   = hybrid
+ upwind_wgt_pv       = 1.00
+ time_scheme         = wrfrk3
+ upwind_order        = 3
+ vert_coord_template = wrf_l32
+ use_topo_smooth     = true
+ topo_smooth_cycles  = 3
+ use_div_damp        = true
+ ptop                = 219.40
+ div_damp_coef2      =   7.812500000000000E-003
+ hybrid_coord_p0     =    100000.000000000     
+ dt_dyn              = 240.
+ div_damp_top        = 3.000
+ div_damp_pole       =   0.000000000000000E+000
+ dt_adv              = 0.00
+ dt_phys             = 0.00
+ max_wave_speed      =    300.000000000000     
+ max_cfl             =   0.500000000000000     
+ filter_coef_a       =    1.00000000000000     
+ filter_coef_b       =   0.400000005960464     
+ div_damp_lat0       =    90.0000000000000     
+ filter_coef_c       =   0.200000002980232     
+ filter_coef1_phs    =   0.375000000000000     
+ filter_coef2_phs    =   0.000000000000000E+000
+ filter_lat0_phs     =    60.0000000000000     
+ filter_coef1_pt     =   0.375000000000000     
+ filter_coef2_pt     =   0.000000000000000E+000
+ use_smag_damp       = true
+ filter_lat0_pt      =    60.0000000000000     
+ filter_coef1_uv     =   0.375000000000000     
+ filter_coef2_uvs    =   0.000000000000000E+000
+ filter_lat0_uv      =    60.0000000000000     
+ pgf_scheme          = lin97
+ smag_damp_coef      = 0.10
+ use_adv             = true
+ use_phy             = true
+ adv_scheme          = ffsl
+ depart_point_scheme = eul
+ limiter_type        = mono
+ ffsl_flux_type      = ppm
+ ke_scheme           = 2
+ ke_cell_wgt         = 0.500
+ pv_scheme           = upwind
+ pv_pole_stokes      = true
+ output_h0           = true
+ output_h1           = false
+ output_Agrid        = true
+ upwind_order_pv     = 3
+ upwind_wgt_pv       = 1.00
+ time_scheme         = wrfrk3
+ upwind_order        = 3
+ use_topo_smooth     = true
+ member_inside       = 8
+ member_total        = 8
+ topo_smooth_cycles  = 3
+ use_div_damp        = true
+ div_damp_coef2      =   7.812500000000000E-003
+ div_damp_top        = 3.000
+ div_damp_pole       =   0.000000000000000E+000
+ div_damp_lat0       =    90.0000000000000     
+ vector_outside      = 1
+ use_create_ensemble = false
+ initial_file_type   = time                          
+ initial_interval   = 480
+ =========================================================
+ use_smag_damp       = true
+ smag_damp_coef      = 0.10
+ use_adv             = true
+ use_phy             = true
+ output_h0           = true
+ output_h1           = false
+[ Notice][20230403/14:09:21][M: ATMGROUP 3/4)][RANK: 0/60] Model top pressure is 219.40Pa.
+ output_Agrid        = true
+ member_inside       = 8
+ member_total        = 8
+ vector_outside      = 1
+ use_create_ensemble = false
+ initial_file_type   = time                          
+ initial_interval   = 480
+ =========================================================
+[ Notice][20230403/14:09:21][M: ATMGROUP 4/4)][RANK: 0/60] Model top pressure is 219.40Pa.
+[Warning][20230403/14:09:22][M: ATMGROUP 3/4)][RANK: 0/60] Parameter restart_interval is not set, so no restart file outputted.
+[Warning][20230403/14:09:21][M: ATMGROUP 1/4)][RANK: 0/60] Parameter restart_interval is not set, so no restart file outputted.
+[Warning][20230403/14:09:22][M: ATMGROUP 4/4)][RANK: 0/60] Parameter restart_interval is not set, so no restart file outputted.
+[Warning][20230403/14:09:21][M: ATMGROUP 2/4)][RANK: 0/60] Parameter restart_interval is not set, so no restart file outputted.
+[ Notice][20230403/14:09:22][M: ATMGROUP 3/4)][RANK: 0/60] There are 1 advection batches.
+ - moist  0.0000000E+00
+[ Notice][20230403/14:09:22][M: ATMGROUP 1/4)][RANK: 0/60] There are 1 advection batches.
+ - moist  0.0000000E+00
+[ Notice][20230403/14:09:22][M: ATMGROUP 4/4)][RANK: 0/60] There are 1 advection batches.
+ - moist  0.0000000E+00
+[ Notice][20230403/14:09:21][M: ATMGROUP 2/4)][RANK: 0/60] There are 1 advection batches.
+ - moist  0.0000000E+00
+[ Notice][20230403/14:09:21][M: DA][RANK: 0/1] segmap1 init
+[ Notice][20230403/14:09:21][M: DA][RANK: 0/1] segmap2 init
+[ Notice][20230403/14:09:21][M: DA][RANK: 0/1] rearranger init
+[ Notice][20230403/14:09:22][M: ATMGROUP 1/4)][RANK: 0/60] Use /home/xuewei/share/geog/ETOPO1_Ice_g_gmt4.grd as topography.
+[ Notice][20230403/14:09:22][M: ATMGROUP 2/4)][RANK: 0/60] Use /home/xuewei/share/geog/ETOPO1_Ice_g_gmt4.grd as topography.
+[ Notice][20230403/14:09:22][M: ATMGROUP 3/4)][RANK: 0/60] Use /home/xuewei/share/geog/ETOPO1_Ice_g_gmt4.grd as topography.
+[ Notice][20230403/14:09:22][M: ATMGROUP 4/4)][RANK: 0/60] Use /home/xuewei/share/geog/ETOPO1_Ice_g_gmt4.grd as topography.
+[ Notice][20230403/14:09:21][M: DA][RANK: 0/1] router init
+[ Notice][20230403/14:09:22][M: DA][RANK: 0/1] da_time 10
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] num_topo_lon = 21601, num_topo_lat = 10801
+[ Notice][20230403/14:09:23][M: ATMGROUP 3/4)][RANK: 0/60] num_topo_lon = 21601, num_topo_lat = 10801
+[ Notice][20230403/14:09:23][M: ATMGROUP 4/4)][RANK: 0/60] num_topo_lon = 21601, num_topo_lat = 10801
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] num_topo_lon = 21601, num_topo_lat = 10801
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-02_00.00.00.nc as background.
+[ Notice][20230403/14:09:23][M: ATMGROUP 3/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-07_08.00.00.nc as background.
+[ Notice][20230403/14:09:23][M: ATMGROUP 4/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-10_00.00.00.nc as background.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-04_16.00.00.nc as background.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-02_08.00.00.nc as background.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-05_00.00.00.nc as background.
+[ Notice][20230403/14:09:23][M: ATMGROUP 3/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:23][M: ATMGROUP 3/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:23][M: ATMGROUP 3/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:23][M: ATMGROUP 4/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:23][M: ATMGROUP 4/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:23][M: ATMGROUP 4/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:23][M: ATMGROUP 3/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 4/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 3/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 4/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 3/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-07_16.00.00.nc as background.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:23][M: ATMGROUP 4/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-10_08.00.00.nc as background.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 1/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-02_16.00.00.nc as background.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:23][M: ATMGROUP 2/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-05_08.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-08_00.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-10_16.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-03_00.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-08_08.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-11_00.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-03_08.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-08_16.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-05_16.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-11_08.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-03_16.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-09_00.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 4/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-11_16.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-04_00.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-06_00.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 3/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-09_08.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-06_08.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 1/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-04_08.00.00.nc as background.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-09_16.00.00.nc as background.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 1/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:25][M: ATMGROUP 1/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 1/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:24][M: ATMGROUP 2/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-06_16.00.00.nc as background.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-12_00.00.00.nc as background.
+[ Notice][20230403/14:09:25][M: ATMGROUP 1/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 1/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 1/4)][RANK: 0/60] Finish atm_init
+[ Notice][20230403/14:09:25][M: ATMGROUP 1/4)][RANK: 0/60] Begin atm_run
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-07_00.00.00.nc as background.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Use MPAS /ddnstor/xuewei/share/inifile/mpas/360x180-newgrid/20190601/MPAS_360x180_2019-06-12_08.00.00.nc as background.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Finish atm_init
+[ Notice][20230403/14:09:25][M: ATMGROUP 3/4)][RANK: 0/60] Begin atm_run
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid mean sea level pressure and calculate surface pressure based on pressure-height formula.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Calculate pressure on each grid.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid temperature and calculate potential temperature.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid u wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Regrid v wind component.
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Finish atm_init
+[ Notice][20230403/14:09:25][M: ATMGROUP 2/4)][RANK: 0/60] Begin atm_run
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Finish atm_init
+[ Notice][20230403/14:09:25][M: ATMGROUP 4/4)][RANK: 0/60] Begin atm_run
+==> 2019-06-06T12:00:00Z 0.501662838424577E+20 0.128226047255089E+26 36108.9880389110
+==> 2019-06-06T12:00:00Z 0.501662838424577E+20 0.128185247567352E+26 36180.5785279286
+==> 2019-06-06T12:00:00Z 0.501662838424577E+20 0.128178552935077E+26 35966.6755978086
+==> 2019-06-06T12:00:00Z 0.501662838424577E+20 0.128208890238545E+26 36120.0655630322
+0
+==> 2019-06-06T13:00:00Z 0.501662838384803E+20 0.128183950744361E+26 36223.7252836519
+[ Notice][20230403/14:09:48][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 22.6728 seconds.
+==> 2019-06-06T13:00:00Z 0.501662838419600E+20 0.128224805055221E+26 36143.8259634744
+[ Notice][20230403/14:09:48][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.3149 seconds.
+==> 2019-06-06T13:00:00Z 0.501662838388250E+20 0.128177272472317E+26 35976.1942046720
+[ Notice][20230403/14:09:48][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 23.0407 seconds.
+==> 2019-06-06T13:00:00Z 0.501662838392472E+20 0.128207595813796E+26 36156.7646756117
+[ Notice][20230403/14:09:53][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 27.8724 seconds.
+==> 2019-06-06T14:00:00Z 0.501662838355738E+20 0.128183726728461E+26 36256.3657647165
+[ Notice][20230403/14:10:11][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 23.3690 seconds.
+==> 2019-06-06T14:00:00Z 0.501662838381945E+20 0.128177067186931E+26 35965.1508975951
+[ Notice][20230403/14:10:12][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 23.1794 seconds.
+==> 2019-06-06T14:00:00Z 0.501662838415495E+20 0.128224712618279E+26 36178.0022943964
+[ Notice][20230403/14:10:12][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.6936 seconds.
+==> 2019-06-06T14:00:00Z 0.501662838389627E+20 0.128207437464554E+26 36188.3828796660
+[ Notice][20230403/14:10:22][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 28.9233 seconds.
+==> 2019-06-06T15:00:00Z 0.501662838382759E+20 0.128183472414477E+26 36293.1733379925
+[ Notice][20230403/14:10:35][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 23.1832 seconds.
+==> 2019-06-06T15:00:00Z 0.501662838405140E+20 0.128176819814856E+26 35954.5484195923
+[ Notice][20230403/14:10:35][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 23.1756 seconds.
+==> 2019-06-06T15:00:00Z 0.501662838405004E+20 0.128224643553040E+26 36217.6701234116
+[ Notice][20230403/14:10:36][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.6586 seconds.
+==> 2019-06-06T15:00:00Z 0.501662838391251E+20 0.128207304206658E+26 36221.9145669210
+[ Notice][20230403/14:10:50][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 27.5788 seconds.
+==> 2019-06-06T16:00:00Z 0.501662838440651E+20 0.128183279996205E+26 36339.5794353868
+[ Notice][20230403/14:10:58][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 22.7860 seconds.
+==> 2019-06-06T16:00:00Z 0.501662838460752E+20 0.128176601451974E+26 35964.4544558379
+[ Notice][20230403/14:10:58][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 22.8040 seconds.
+==> 2019-06-06T16:00:00Z 0.501662838427659E+20 0.128224571846070E+26 36256.5407435196
+[ Notice][20230403/14:10:59][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.2949 seconds.
+==> 2019-06-06T16:00:00Z 0.501662838432760E+20 0.128207187756827E+26 36267.5004768918
+[ Notice][20230403/14:11:19][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 28.8782 seconds.
+==> 2019-06-06T17:00:00Z 0.501662838417543E+20 0.128183118163584E+26 36375.0545092562
+[ Notice][20230403/14:11:21][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 23.0155 seconds.
+==> 2019-06-06T17:00:00Z 0.501662838439002E+20 0.128176414030756E+26 35994.3705885912
+[ Notice][20230403/14:11:21][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 22.9091 seconds.
+==> 2019-06-06T17:00:00Z 0.501662838405503E+20 0.128224507206612E+26 36297.0640491649
+[ Notice][20230403/14:11:23][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.4951 seconds.
+==> 2019-06-06T18:00:00Z 0.501662838377604E+20 0.128176267101262E+26 36066.5047484035
+[ Notice][20230403/14:11:44][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 23.1525 seconds.
+==> 2019-06-06T18:00:00Z 0.501662838367141E+20 0.128182969566291E+26 36449.8322588419
+[ Notice][20230403/14:11:44][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 23.2588 seconds.
+==> 2019-06-06T17:00:00Z 0.501662838405482E+20 0.128207064573323E+26 36310.0739202978
+[ Notice][20230403/14:11:46][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 27.4623 seconds.
+==> 2019-06-06T18:00:00Z 0.501662838400437E+20 0.128224451853656E+26 36339.1495290578
+[ Notice][20230403/14:11:46][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.7676 seconds.
+==> 2019-06-06T19:00:00Z 0.501662838366137E+20 0.128176121145963E+26 36128.8724412439
+[ Notice][20230403/14:12:07][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 23.2280 seconds.
+==> 2019-06-06T19:00:00Z 0.501662838353090E+20 0.128182821486476E+26 36507.8491116343
+[ Notice][20230403/14:12:07][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 23.4848 seconds.
+==> 2019-06-06T19:00:00Z 0.501662838396137E+20 0.128224404024371E+26 36373.2477592049
+[ Notice][20230403/14:12:10][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.6489 seconds.
+==> 2019-06-06T18:00:00Z 0.501662838381790E+20 0.128206958798335E+26 36361.8821432760
+[ Notice][20230403/14:12:14][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 28.0653 seconds.
+==> 2019-06-06T20:00:00Z 0.501662838376871E+20 0.128175996319921E+26 36159.0551839311
+[ Notice][20230403/14:12:30][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 22.7758 seconds.
+==> 2019-06-06T20:00:00Z 0.501662838360121E+20 0.128182693680491E+26 36518.4591314656
+[ Notice][20230403/14:12:30][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 22.9500 seconds.
+==> 2019-06-06T20:00:00Z 0.501662838392160E+20 0.128224358327871E+26 36398.3587900228
+[ Notice][20230403/14:12:33][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.1597 seconds.
+==> 2019-06-06T19:00:00Z 0.501662838368011E+20 0.128206863036610E+26 36402.3629115916
+[ Notice][20230403/14:12:42][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 27.8839 seconds.
+==> 2019-06-06T21:00:00Z 0.501662838386162E+20 0.128175906174972E+26 36187.4134636774
+[ Notice][20230403/14:12:53][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 23.2235 seconds.
+==> 2019-06-06T21:00:00Z 0.501662838365471E+20 0.128182594550226E+26 36528.3399273552
+[ Notice][20230403/14:12:54][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 23.4481 seconds.
+==> 2019-06-06T21:00:00Z 0.501662838389996E+20 0.128224311982555E+26 36421.5396656802
+[ Notice][20230403/14:12:57][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.7750 seconds.
+==> 2019-06-06T20:00:00Z 0.501662838369416E+20 0.128206780037513E+26 36421.4032390341
+[ Notice][20230403/14:13:10][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 28.2765 seconds.
+==> 2019-06-06T22:00:00Z 0.501662838384006E+20 0.128175812098054E+26 36224.1856797450
+[ Notice][20230403/14:13:17][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 23.2858 seconds.
+==> 2019-06-06T22:00:00Z 0.501662838363076E+20 0.128182498946938E+26 36541.9943170192
+[ Notice][20230403/14:13:20][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 26.3674 seconds.
+==> 2019-06-06T22:00:00Z 0.501662838386144E+20 0.128224265933579E+26 36448.9199696496
+[ Notice][20230403/14:13:21][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.8823 seconds.
+==> 2019-06-06T21:00:00Z 0.501662838371154E+20 0.128206706762007E+26 36443.6917607391
+[ Notice][20230403/14:13:38][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 27.3914 seconds.
+==> 2019-06-06T23:00:00Z 0.501662838379187E+20 0.128175695555836E+26 36256.6302302331
+[ Notice][20230403/14:13:40][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 23.0929 seconds.
+==> 2019-06-06T23:00:00Z 0.501662838358021E+20 0.128182392329489E+26 36561.6795749594
+[ Notice][20230403/14:13:44][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 23.3345 seconds.
+==> 2019-06-06T23:00:00Z 0.501662838380142E+20 0.128224224104604E+26 36476.7410412770
+[ Notice][20230403/14:13:45][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.8029 seconds.
+==> 2019-06-07T00:00:00Z 0.501662838374433E+20 0.128175572705064E+26 36276.8735331017
+[ Notice][20230403/14:14:03][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 22.7295 seconds.
+==> 2019-06-06T22:00:00Z 0.501662838368140E+20 0.128206628404605E+26 36457.3174443039
+[ Notice][20230403/14:14:06][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 28.0406 seconds.
+==> 2019-06-07T00:00:00Z 0.501662838354759E+20 0.128182279523216E+26 36585.9218774260
+[ Notice][20230403/14:14:07][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 22.8914 seconds.
+==> 2019-06-07T00:00:00Z 0.501662838375582E+20 0.128224183731020E+26 36503.7346635357
+[ Notice][20230403/14:14:08][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 23.2874 seconds.
+           4 ps   u    v    pt              1          32          32          32
+           4 ps   u    v    pt              1          32          32          32
+           4 ps   u    v    pt              1          32          32          32
+[ Notice][20230403/14:14:22][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:14:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:14:22][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:14:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:14:22][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:14:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:14:22][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:14:22][M: DA][RANK: 0/1] 8 32
+==> 2019-06-06T23:00:00Z 0.501662838362420E+20 0.128206550587990E+26 36472.8897907939
+[ Notice][20230403/14:14:35][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 29.2931 seconds.
+==> 2019-06-07T00:00:00Z 0.501662838358503E+20 0.128206474249646E+26 36495.7831035465
+[ Notice][20230403/14:15:02][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 26.8452 seconds.
+           4 ps   u    v    pt              1          32          32          32
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:15:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:21][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:15:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:21][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:15:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:21][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:15:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:21][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:15:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:15:22][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/14:15:22][M: DA][RANK: 0/1] send to svr
+[ Notice][20230403/14:15:23][M: DA][RANK: 0/1] wait for svr
+0 phs
+load time 0.807574987411499
+DNN: recv data (201139200,)
+[ Notice][20230403/14:15:24][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/14:15:30][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/14:15:32][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/14:16:56][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/14:16:57][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/14:17:01][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/14:17:01][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/14:17:01][M: DA][RANK: 0/1] date_char: 201906070000
+[  ===> ][20230403/14:17:01][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/14:17:01][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/14:17:01][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/14:17:01][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/14:17:02][M: DA][RANK: 0/1] output_num_lev:41
+==> 2019-06-07T01:00:00Z 0.501662838381886E+20 0.128223851108784E+26 36329.4602353128
+[ Notice][20230403/14:17:09][M: ATMGROUP 1/4)][RANK: 0/60] Time cost 180.522 seconds.
+==> 2019-06-07T01:00:00Z 0.501662838289551E+20 0.128206127127885E+26 36289.5410529283
+[ Notice][20230403/14:17:10][M: ATMGROUP 2/4)][RANK: 0/60] Time cost 126.902 seconds.
+[  ===> ][20230403/14:17:10][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] 8 32
+==> 2019-06-07T01:00:00Z 0.501662838292163E+20 0.128181896547092E+26 36355.8690513927
+[ Notice][20230403/14:17:11][M: ATMGROUP 3/4)][RANK: 0/60] Time cost 183.466 seconds.
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:17:10][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] u
+==> 2019-06-07T01:00:00Z 0.501662838384577E+20 0.128175237191800E+26 36073.7009320937
+[ Notice][20230403/14:17:12][M: ATMGROUP 4/4)][RANK: 0/60] Time cost 188.565 seconds.
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:17:11][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:17:12][M: ATMGROUP 1/4)][RANK: 0/60] Finish atm_run
+[ Notice][20230403/14:17:12][M: ATMGROUP 1/4)][RANK: 0/60] Atm_run time cost 466.315 seconds.
+[ Notice][20230403/14:17:12][M: ATMGROUP 1/4)][RANK: 0/60] DA Cycle time cost 0.000000 seconds.
+[ Notice][20230403/14:17:12][M: ATMGROUP 1/4)][RANK: 0/60] DA Cycle ATM cost 0.000000 seconds.
+[ Notice][20230403/14:17:12][M: ATMGROUP 1/4)][RANK: 0/60] DA Cycle DA cost 0.000000 seconds.
+[ Notice][20230403/14:17:12][M: ATMGROUP 1/4)][RANK: 0/60] Finish atm_final
+[  ===> ][20230403/14:17:12][M: ATMGROUP 1/4)][RANK: 0/60] ATM MODEL END!
+[  ===> ][20230403/14:17:12][M: COUPLER] DIDA End!
+[ Notice][20230403/14:17:12][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/14:17:12][M: DA][RANK: 0/1] wait for svr
+[ Notice][20230403/14:17:13][M: ATMGROUP 2/4)][RANK: 0/60] Finish atm_run
+[ Notice][20230403/14:17:13][M: ATMGROUP 2/4)][RANK: 0/60] Atm_run time cost 466.623 seconds.
+[ Notice][20230403/14:17:13][M: ATMGROUP 2/4)][RANK: 0/60] DA Cycle time cost 0.000000 seconds.
+[ Notice][20230403/14:17:13][M: ATMGROUP 2/4)][RANK: 0/60] DA Cycle ATM cost 0.000000 seconds.
+[ Notice][20230403/14:17:13][M: ATMGROUP 2/4)][RANK: 0/60] DA Cycle DA cost 0.000000 seconds.
+[ Notice][20230403/14:17:13][M: ATMGROUP 2/4)][RANK: 0/60] Finish atm_final
+[  ===> ][20230403/14:17:13][M: ATMGROUP 2/4)][RANK: 0/60] ATM MODEL END!
+[ Notice][20230403/14:17:13][M: ATMGROUP 3/4)][RANK: 0/60] Finish atm_run
+[ Notice][20230403/14:17:13][M: ATMGROUP 3/4)][RANK: 0/60] Atm_run time cost 466.974 seconds.
+[ Notice][20230403/14:17:13][M: ATMGROUP 3/4)][RANK: 0/60] DA Cycle time cost 0.000000 seconds.
+[ Notice][20230403/14:17:13][M: ATMGROUP 3/4)][RANK: 0/60] DA Cycle ATM cost 0.000000 seconds.
+[ Notice][20230403/14:17:13][M: ATMGROUP 3/4)][RANK: 0/60] DA Cycle DA cost 0.000000 seconds.
+[ Notice][20230403/14:17:13][M: ATMGROUP 3/4)][RANK: 0/60] Finish atm_final
+[  ===> ][20230403/14:17:13][M: ATMGROUP 3/4)][RANK: 0/60] ATM MODEL END!
+[ Notice][20230403/14:17:14][M: ATMGROUP 4/4)][RANK: 0/60] Finish atm_run
+[ Notice][20230403/14:17:14][M: ATMGROUP 4/4)][RANK: 0/60] Atm_run time cost 467.895 seconds.
+[ Notice][20230403/14:17:14][M: ATMGROUP 4/4)][RANK: 0/60] DA Cycle time cost 0.000000 seconds.
+[ Notice][20230403/14:17:14][M: ATMGROUP 4/4)][RANK: 0/60] DA Cycle ATM cost 0.000000 seconds.
+[ Notice][20230403/14:17:14][M: ATMGROUP 4/4)][RANK: 0/60] DA Cycle DA cost 0.000000 seconds.
+[ Notice][20230403/14:17:14][M: ATMGROUP 4/4)][RANK: 0/60] Finish atm_final
+[  ===> ][20230403/14:17:14][M: ATMGROUP 4/4)][RANK: 0/60] ATM MODEL END!
+1
+begin predict
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+42 u_Agrid 9
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+42 u_Agrid 9
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+42 u_Agrid 9
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+[ Notice][20230403/14:19:56][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/14:20:02][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/14:20:04][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/14:21:27][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/14:21:28][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/14:21:32][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/14:21:32][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/14:21:32][M: DA][RANK: 0/1] date_char: 201906071200
+[  ===> ][20230403/14:21:32][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/14:21:32][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/14:21:32][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/14:21:32][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/14:21:32][M: DA][RANK: 0/1] output_num_lev:41
+[  ===> ][20230403/14:21:40][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/14:21:40][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:21:40][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:40][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:21:41][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:42][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:21:42][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:42][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:21:42][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:42][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:21:42][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:42][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:21:42][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:21:43][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/14:21:43][M: DA][RANK: 0/1] wait for svr
+2
+begin predict
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+78 v_Agrid 13
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+82 v_Agrid 17
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+2 pt 1
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+[ Notice][20230403/14:24:24][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/14:24:29][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/14:24:32][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/14:25:55][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/14:25:56][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/14:25:59][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/14:25:59][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/14:25:59][M: DA][RANK: 0/1] date_char: 201906080000
+[  ===> ][20230403/14:25:59][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/14:25:59][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/14:25:59][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/14:25:59][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/14:25:59][M: DA][RANK: 0/1] output_num_lev:41
+[  ===> ][20230403/14:26:08][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:08][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:26:09][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:26:10][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/14:26:10][M: DA][RANK: 0/1] wait for svr
+3
+begin predict
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+34 u_Agrid 1
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+2 pt 1
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+2 pt 1
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+[ Notice][20230403/14:29:51][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/14:29:57][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/14:29:59][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/14:31:23][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/14:31:24][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/14:31:28][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/14:31:28][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/14:31:28][M: DA][RANK: 0/1] date_char: 201906081200
+[  ===> ][20230403/14:31:28][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/14:31:28][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/14:31:28][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/14:31:28][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/14:31:28][M: DA][RANK: 0/1] output_num_lev:41
+[  ===> ][20230403/14:31:36][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/14:31:36][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:31:36][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:36][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:31:36][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:36][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:31:36][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:36][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:31:36][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:31:37][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:38][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:31:38][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:31:38][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/14:31:38][M: DA][RANK: 0/1] wait for svr
+4
+begin predict
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+82 v_Agrid 17
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+18 pt 17
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+2 pt 1
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+[ Notice][20230403/14:35:56][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/14:36:01][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/14:36:03][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/14:37:26][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/14:37:27][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/14:37:30][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/14:37:30][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/14:37:30][M: DA][RANK: 0/1] date_char: 201906090000
+[  ===> ][20230403/14:37:30][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/14:37:30][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/14:37:30][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/14:37:30][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/14:37:30][M: DA][RANK: 0/1] output_num_lev:41
+[  ===> ][20230403/14:37:39][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:39][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:37:40][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:37:41][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/14:37:41][M: DA][RANK: 0/1] wait for svr
+5
+begin predict
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+2 pt 1
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+2 pt 1
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+2 pt 1
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+[ Notice][20230403/14:43:10][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/14:43:15][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/14:43:18][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/14:44:42][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/14:44:43][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/14:44:47][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/14:44:47][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/14:44:47][M: DA][RANK: 0/1] date_char: 201906091200
+[  ===> ][20230403/14:44:47][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/14:44:47][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/14:44:47][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/14:44:47][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/14:44:47][M: DA][RANK: 0/1] output_num_lev:41
+[  ===> ][20230403/14:44:55][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/14:44:55][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:44:55][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:55][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:44:55][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:55][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:44:55][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:44:56][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:57][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:44:57][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:57][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:44:57][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:44:57][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/14:44:57][M: DA][RANK: 0/1] wait for svr
+6
+begin predict
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+[ Notice][20230403/14:49:35][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/14:49:41][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/14:49:43][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/14:51:08][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/14:51:09][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/14:51:12][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/14:51:12][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/14:51:12][M: DA][RANK: 0/1] date_char: 201906100000
+[  ===> ][20230403/14:51:12][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/14:51:12][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/14:51:12][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/14:51:12][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/14:51:12][M: DA][RANK: 0/1] output_num_lev:41
+[  ===> ][20230403/14:51:21][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:21][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:51:22][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:51:23][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/14:51:23][M: DA][RANK: 0/1] wait for svr
+7
+begin predict
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+[ Notice][20230403/14:56:04][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/14:56:09][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/14:56:12][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/14:57:36][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/14:57:37][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/14:57:40][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/14:57:40][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/14:57:40][M: DA][RANK: 0/1] date_char: 201906101200
+[  ===> ][20230403/14:57:40][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/14:57:40][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/14:57:40][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/14:57:40][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/14:57:40][M: DA][RANK: 0/1] output_num_lev:41
+[  ===> ][20230403/14:57:49][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:57:49][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] ps
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] u
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] v
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] pt
+[ Notice][20230403/14:57:50][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/14:57:51][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/14:57:51][M: DA][RANK: 0/1] wait for svr
+8
+begin predict
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+8 pt 7
+[ Notice][20230403/15:02:34][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/15:02:39][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/15:02:42][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/15:04:06][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/15:04:07][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/15:04:10][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/15:04:10][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/15:04:10][M: DA][RANK: 0/1] date_char: 201906110000
+[  ===> ][20230403/15:04:10][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/15:04:10][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/15:04:10][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/15:04:10][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/15:04:11][M: DA][RANK: 0/1] output_num_lev:41
+[  ===> ][20230403/15:04:19][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/15:04:19][M: DA][RANK: 0/1] ps
+[ Notice][20230403/15:04:19][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:19][M: DA][RANK: 0/1] u
+[ Notice][20230403/15:04:19][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:19][M: DA][RANK: 0/1] v
+[ Notice][20230403/15:04:19][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:19][M: DA][RANK: 0/1] pt
+[ Notice][20230403/15:04:19][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:19][M: DA][RANK: 0/1] ps
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] u
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] v
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] pt
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] ps
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] u
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] v
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] pt
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] ps
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] u
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] v
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:20][M: DA][RANK: 0/1] pt
+[ Notice][20230403/15:04:21][M: DA][RANK: 0/1] 8 32
+[ Notice][20230403/15:04:21][M: DA][RANK: 0/1] send data_info to svr
+[ Notice][20230403/15:04:21][M: DA][RANK: 0/1] wait for svr
+9
+begin predict
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+88 v_Agrid 23
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+8 pt 7
+(32, 1, 192, 384)
+95 v_Agrid 30
+(32, 1, 192, 384)
+96 v_Agrid 31
+(32, 1, 192, 384)
+93 v_Agrid 28
+(32, 1, 192, 384)
+73 v_Agrid 8
+(32, 1, 192, 384)
+9 pt 8
+(32, 1, 192, 384)
+45 u_Agrid 12
+(32, 1, 192, 384)
+57 u_Agrid 24
+(32, 1, 192, 384)
+39 u_Agrid 6
+(32, 1, 192, 384)
+49 u_Agrid 16
+(32, 1, 192, 384)
+52 u_Agrid 19
+(32, 1, 192, 384)
+23 pt 22
+(32, 1, 192, 384)
+25 pt 24
+(32, 1, 192, 384)
+16 pt 15
+(32, 1, 192, 384)
+53 u_Agrid 20
+(32, 1, 192, 384)
+65 v_Agrid 0
+(32, 1, 192, 384)
+69 v_Agrid 4
+(32, 1, 192, 384)
+61 u_Agrid 28
+(32, 1, 192, 384)
+37 u_Agrid 4
+(32, 1, 192, 384)
+75 v_Agrid 10
+(32, 1, 192, 384)
+5 pt 4
+(32, 1, 192, 384)
+21 pt 20
+(32, 1, 192, 384)
+13 pt 12
+(32, 1, 192, 384)
+15 pt 14
+(32, 1, 192, 384)
+68 v_Agrid 3
+(32, 1, 192, 384)
+28 pt 27
+(32, 1, 192, 384)
+40 u_Agrid 7
+(32, 1, 192, 384)
+50 u_Agrid 17
+(32, 1, 192, 384)
+4 pt 3
+(32, 1, 192, 384)
+24 pt 23
+(32, 1, 192, 384)
+44 u_Agrid 11
+(32, 1, 192, 384)
+33 u_Agrid 0
+(32, 1, 192, 384)
+76 v_Agrid 11
+(32, 1, 192, 384)
+67 v_Agrid 2
+(32, 1, 192, 384)
+19 pt 18
+(32, 1, 192, 384)
+55 u_Agrid 22
+(32, 1, 192, 384)
+60 u_Agrid 27
+(32, 1, 192, 384)
+32 pt 31
+(32, 1, 192, 384)
+85 v_Agrid 20
+(32, 1, 192, 384)
+48 u_Agrid 15
+(32, 1, 192, 384)
+12 pt 11
+(32, 1, 192, 384)
+72 v_Agrid 7
+(32, 1, 192, 384)
+43 u_Agrid 10
+(32, 1, 192, 384)
+36 u_Agrid 3
+(32, 1, 192, 384)
+70 v_Agrid 5
+(32, 1, 192, 384)
+84 v_Agrid 19
+(32, 1, 192, 384)
+74 v_Agrid 9
+(32, 1, 192, 384)
+41 u_Agrid 8
+(32, 1, 192, 384)
+66 v_Agrid 1
+(32, 1, 192, 384)
+77 v_Agrid 12
+(32, 1, 192, 384)
+11 pt 10
+(32, 1, 192, 384)
+51 u_Agrid 18
+(32, 1, 192, 384)
+58 u_Agrid 25
+(32, 1, 192, 384)
+26 pt 25
+(32, 1, 192, 384)
+17 pt 16
+(32, 1, 192, 384)
+29 pt 28
+(32, 1, 192, 384)
+63 u_Agrid 30
+(32, 1, 192, 384)
+64 u_Agrid 31
+(32, 1, 192, 384)
+83 v_Agrid 18
+(32, 1, 192, 384)
+89 v_Agrid 24
+(32, 1, 192, 384)
+46 u_Agrid 13
+(32, 1, 192, 384)
+27 pt 26
+(32, 1, 192, 384)
+56 u_Agrid 23
+(32, 1, 192, 384)
+54 u_Agrid 21
+(32, 1, 192, 384)
+1 pt 0
+(32, 1, 192, 384)
+31 pt 30
+(32, 1, 192, 384)
+20 pt 19
+(32, 1, 192, 384)
+35 u_Agrid 2
+(32, 1, 192, 384)
+81 v_Agrid 16
+(32, 1, 192, 384)
+3 pt 2
+(32, 1, 192, 384)
+6 pt 5
+(32, 1, 192, 384)
+47 u_Agrid 14
+(32, 1, 192, 384)
+34 u_Agrid 1
+(32, 1, 192, 384)
+92 v_Agrid 27
+(32, 1, 192, 384)
+10 pt 9
+(32, 1, 192, 384)
+14 pt 13
+(32, 1, 192, 384)
+94 v_Agrid 29
+(32, 1, 192, 384)
+38 u_Agrid 5
+(32, 1, 192, 384)
+71 v_Agrid 6
+(32, 1, 192, 384)
+59 u_Agrid 26
+(32, 1, 192, 384)
+91 v_Agrid 26
+(32, 1, 192, 384)
+62 u_Agrid 29
+(32, 1, 192, 384)
+42 u_Agrid 9
+(32, 1, 192, 384)
+78 v_Agrid 13
+(32, 1, 192, 384)
+22 pt 21
+(32, 1, 192, 384)
+30 pt 29
+(32, 1, 192, 384)
+86 v_Agrid 21
+(32, 1, 192, 384)
+82 v_Agrid 17
+(32, 1, 192, 384)
+2 pt 1
+(32, 1, 192, 384)
+80 v_Agrid 15
+(32, 1, 192, 384)
+90 v_Agrid 25
+(32, 1, 192, 384)
+18 pt 17
+(32, 1, 192, 384)
+79 v_Agrid 14
+(32, 1, 192, 384)
+87 v_Agrid 22
+(32, 1, 192, 384)
+88 v_Agrid 23
+result data shape (32, 97, 192, 384)
+(32, 1, 192, 384)
+0 phs 0
+(32, 1, 192, 384)
+7 pt 6
+(32, 1, 192, 384)
+8 pt 7
+[ Notice][20230403/15:09:13][M: DA][RANK: 0/1] recv from svr
+[ Notice][20230403/15:09:18][M: DA][RANK: 0/1] Letkf run start!
+[ Notice][20230403/15:09:21][M: DA][RANK: 0/1] Obslist generation & communication done!
+[ Notice][20230403/15:10:45][M: DA][RANK: 0/1] Letkf run done!
+[ Notice][20230403/15:10:46][M: DA][RANK: 0/1] send to svr for next round
+DNN: recv ensemble data for next round (201139200,)
+[  ===> ][20230403/15:10:49][M: DA][RANK: 0/1] da_2d_num: 1
+[  ===> ][20230403/15:10:49][M: DA][RANK: 0/1] da_3d_num: 3
+[  ===> ][20230403/15:10:49][M: DA][RANK: 0/1] date_char: 201906111200
+[  ===> ][20230403/15:10:49][M: DA][RANK: 0/1] lonstep: 1
+[  ===> ][20230403/15:10:49][M: DA][RANK: 0/1] latstep: 1
+[  ===> ][20230403/15:10:49][M: DA][RANK: 0/1] ztep: 1
+[  ===> ][20230403/15:10:49][M: DA][RANK: 0/1] da_output nc init
+[  ===> ][20230403/15:10:49][M: DA][RANK: 0/1] output_num_lev:41
+[  ===> ][20230403/15:10:58][M: DA][RANK: 0/1] da netcdf output done!
+[ Notice][20230403/15:10:58][M: DA][RANK: 0/1] Out da run
+[  ===> ][20230403/15:10:58][M: DA][RANK: 0/1] DA MODEL END!

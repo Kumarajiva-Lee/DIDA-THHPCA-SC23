@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmpal.a  CMakeFiles/mpal.dir/src/mpal.F90.o CMakeFiles/mpal.dir/src/mpal_basic.F90.o CMakeFiles/mpal.dir/src/blas/mpal_blas.F90.o CMakeFiles/mpal.dir/src/eig/mpal_eig.F90.o
+/usr/bin/ranlib libmpal.a

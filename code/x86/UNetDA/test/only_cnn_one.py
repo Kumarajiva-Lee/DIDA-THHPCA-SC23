@@ -13,31 +13,10 @@ import netCDF4 as nc
 import scipy.ndimage
 from sys import argv
 saved_model_path_intg = {}
-
-# saved_model_path_intg['phs'] = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/Limin_phs_300'
-# saved_model_path_intg['pt']  = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/Limin_pt_300'
-# saved_model_path_intg['u']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/Limin_u_300'
-# saved_model_path_intg['v']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/Limin_v_300'
-# saved_model_path_intg['phs'] = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/ResUNet_phs_layer_300'
-# saved_model_path_intg['pt']  = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/ResUNet_pt_layer_weight_300'
-# saved_model_path_intg['u']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/ResUNet_u_layer_weight_300'
-# saved_model_path_intg['v']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/ResUNet_v_layer_weight_300'
-# saved_model_path_intg['phs'] = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/ResUNet_upsample_phs_300'
-# saved_model_path_intg['pt']  = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/ResUNet_upsample_pt_300'
-# saved_model_path_intg['u']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/ResUNet_upsample_u_300'
-# saved_model_path_intg['v']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/ResUNet_upsample_v_300'
-# saved_model_path_intg['phs'] = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/Finetune1_ana2bkg_upsample_phs_300'
-# saved_model_path_intg['pt']  = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/Finetune1_ana2bkg_upsample_pt_300'
-# saved_model_path_intg['u']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/Finetune1_ana2bkg_upsample_u_300'
-# saved_model_path_intg['v']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/Finetune1_ana2bkg_upsample_v_300'
-# saved_model_path_intg['phs'] = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/' + argv[1] + '_phs_300'
-# saved_model_path_intg['pt']  = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/' + argv[1] + '_pt_300'
-# saved_model_path_intg['u']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/' + argv[1] + '_u_300'
-# saved_model_path_intg['v']   = '/home/xuewei/ddn/xiaoyi/NN_gpu/trainedModels/' + argv[1] + '_v_300'
-saved_model_path_intg['phs'] = '/home/xuewei/ddn/xiaoyi/NN_cpu/trainedModels/new'
-saved_model_path_intg['pt']  = '/home/xuewei/ddn/xiaoyi/NN_cpu/trainedModels/new'
-saved_model_path_intg['u']   = '/home/xuewei/ddn/xiaoyi/NN_cpu/trainedModels/new'
-saved_model_path_intg['v']   = '/home/xuewei/ddn/xiaoyi/NN_cpu/trainedModels/new'
+saved_model_path_intg['phs'] = '/home/xuewei/ddn/xiaoyi/NN_cpu/trainedModels/ResUNet3_0_14_200'
+saved_model_path_intg['pt']  = '/home/xuewei/ddn/xiaoyi/NN_cpu/trainedModels/ResUNet3_0_14_200'
+saved_model_path_intg['u']   = '/home/xuewei/ddn/xiaoyi/NN_cpu/trainedModels/ResUNet3_0_14_200'
+saved_model_path_intg['v']   = '/home/xuewei/ddn/xiaoyi/NN_cpu/trainedModels/ResUNet3_0_14_200'
 cf.init()
 inter_num  = cf.get_inter_num()
 halo_lat = 6
@@ -111,48 +90,9 @@ def run(iternum = 0, last_result = None):
 			recv_data = recv_data.reshape(data_sz[3],data_sz[2],data_sz[1],data_sz[8])
 			
 			recv_data = recv_data.transpose(3,2,1,0)
-			# np.save('/home/xuewei/ddn/jiaqilong/dida-v4/test/exp_gamma1_0/member0_step0.npy', recv_data[0])
-			# now: (ens, z, y, x)
-			# 无halo版本 发回给fortran
-			# np.save('/home/xuewei/ddn/jiaqilong/dida-v4/test/exp_debug/' + str(iternum) + '_receive.npy', recv_data)
 			tmp_recv = recv_data
-			
-			# data_sz_lr = recv_data.shape[0]*halo_lon*recv_data.shape[1]*recv_data.shape[2]
-
-			# item_send_left =  recv_data[:,:,:,: halo_lon]
-			# item_send_right = recv_data[:,:,:,-halo_lon:]
-			# item_recv_right = np.zeros(data_sz_lr)
-			# item_recv_left = np.zeros(data_sz_lr)
-			# item_send_left = item_send_left.reshape(data_sz_lr)
-			# item_send_right = item_send_right.reshape(data_sz_lr)
-			
-			# item_recv_right = item_send_left
-			# item_recv_left  = item_send_right
-
-			# real_rank = comm_rank - bias_rank
-			# print('real_rank', real_rank, data_sz, flush=True)
-			# define: x-> along lat
-			# define: y-> along lon
-		# 	x = real_rank / x_num
-		# 	y = real_rank % x_num
-			
-		# 	item_recv_right = item_recv_right.reshape(recv_data.shape[0],recv_data.shape[1],recv_data.shape[2],halo_lon)
-		# 	item_recv_left = item_recv_left.reshape(recv_data.shape[0],recv_data.shape[1],recv_data.shape[2],halo_lon)
-		# 	recv_data = np.append(item_recv_left,recv_data,axis =3)
-		# 	recv_data = np.append(recv_data,item_recv_right,axis =3)
-
-		# 	item_recv_up = np.repeat(recv_data[:,:,[0]], repeats=halo_lat, axis=2)
-
-		# 	item_recv_down = np.repeat(recv_data[:,:,[-1]], repeats=halo_lat, axis=2)
-
-		# 	recv_data = np.append(item_recv_up,recv_data,axis =2)
-		# 	recv_data = np.append(recv_data,item_recv_down,axis =2)
 		else:
 			recv_data = np.empty([data_sz[8],data_sz[1],data_sz[2]+halo_lat*2,data_sz[3]+halo_lon*2])
-		
-		# new_comm.barrier()
-		# new_comm.Bcast(recv_data,0)
-		# new_comm.barrier()
 
 	# ready to predict
 	if iternum == 0:
@@ -177,12 +117,10 @@ def run(iternum = 0, last_result = None):
 		if comm_rank == group_root:
 			recv_sz =  data_sz[1] * data_sz[2] * data_sz[3] * data_sz[8]
 			result_data = np.empty((data_sz[8] * data_sz[2] * data_sz[3] * new_comm.Get_size()))
-			# np.save('/home/xuewei/ddn/jiaqilong/dida-v4/test/exp_debug/' + str(iternum) + '_ensemble_brfore_cnn.npy', ensemble)
 		else:
 			result_data = None
 		new_comm.barrier()
 		if comm_rank == group_root:
-			# np.save('/home/xuewei/ddn/jiaqilong/dida-v4/test/exp_gamma1_0/member0_step' + str(iternum) + '_input.npy', ensemble[0])
 			print('begin predict', flush=True)
 		proxy_intgrate.data = ensemble
 		result = proxy_intgrate.predict()
@@ -194,10 +132,8 @@ def run(iternum = 0, last_result = None):
 		if comm_rank == group_root:
 			result_data = result_data.reshape(new_comm.Get_size(),data_sz[8],data_sz[2],data_sz[3])
 			result_data = result_data.transpose(1,0,2,3)
-			# np.save('/home/xuewei/ddn/jiaqilong/dida-v4/test/exp_gamma1_0/member0_step' + str(iternum) + '.npy',result_data[0])
 			result_data = result_data.transpose(3,2,1,0)
 			total_size = recv_sz
-			# np.save('/home/xuewei/ddn/jiaqilong/dida-v4/test/exp_debug/' + str(iternum) + '_result.npy', result_data)
 			result_data = result_data.reshape(total_size)
 			
 			comm.Send([result_data, total_size, MPI.DOUBLE], comm_rank - 1, 0)
@@ -215,8 +151,6 @@ def run(iternum = 0, last_result = None):
 		print('DNN: recv ensemble data for next round',recv_data.shape,flush = True)
 		recv_data = recv_data.reshape(data_sz[3],data_sz[2],data_sz[1],total_num)
 		recv_data = recv_data.transpose(3,2,1,0)
-		# tmp_recv = recv_data
-		# np.save('/home/xuewei/ddn/jiaqilong/dida-v4/test/exp_gamma1_0/' + str(iternum) + '_ensemble_before_halo.npy', recv_data)
 		data_sz_lr = recv_data.shape[0]*halo_lon*recv_data.shape[1]*recv_data.shape[2]
 
 		item_send_left =  recv_data[:,:,:,: halo_lon]
@@ -239,7 +173,6 @@ def run(iternum = 0, last_result = None):
 
 		recv_data = np.append(item_recv_up,recv_data,axis =2)
 		recv_data = np.append(recv_data,item_recv_down,axis =2)
-		# np.save('/home/xuewei/ddn/jiaqilong/dida-v4/test/exp_gamma1_0/' + str(iternum) + '_ensemble_after_halo.npy', recv_data)
 	else:
 		recv_data = np.empty([total_num , data_sz[1], data_sz[2] + halo_lat * 2, data_sz[3] + halo_lon * 2])
 	new_comm.barrier()

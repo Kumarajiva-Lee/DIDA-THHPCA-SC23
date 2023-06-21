@@ -9,7 +9,7 @@
    atm_phase_diff            = 1800
    da_endnn_in_seconds       = 30
    da_start_time             = 2019,06,07,00,00
-   end_time                  = 2019,06,12,00,00
+   end_time                  = 2019,06,09,00,00
    da_in_seconds             = 10800
    atm_ensemble_total        = 32
    atm_ensemble_group        = 4

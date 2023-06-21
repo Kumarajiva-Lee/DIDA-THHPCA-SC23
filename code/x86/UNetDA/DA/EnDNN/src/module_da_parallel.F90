@@ -1,7 +1,5 @@
 #include "../../utils/da_config.inc"
 
-#define HALF_PRECISION 0
-
 module da_parallel
   use mpi
   !use coupler_mod

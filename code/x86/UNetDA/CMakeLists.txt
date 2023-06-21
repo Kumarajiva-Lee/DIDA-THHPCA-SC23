@@ -279,7 +279,7 @@ add_subdirectory(DA/utils)
 # 9. Target_link
 ####################################################################################
 add_executable(dida.exe DRIVE/dida_drive.F90)
-target_link_libraries(dida.exe da atm coupler gptl redis mct flogger fortran_datetime fiona fortran_string librpe.a)
+target_link_libraries(dida.exe da atm coupler gptl redis mct flogger fortran_datetime fiona fortran_string)
 
 
 ####################################################################################

@@ -10,7 +10,7 @@ LIB_DIR=../lib/
 # 	$(FC) -I$(MPAL_INCLUDE) -L$(MPAL_INCLUDE) -L$(LIB_DIR) $^ -o $@ -lmpal -lcadnaF -lrpe
 
 test3: test3.f90
-	$(FC) -mieee -g -O3 -mftz -msimd -I$(MPAL_INCLUDE) -L$(MPAL_INCLUDE) -L$(LIB_DIR) -L$(XMATH_DIR) $^ -o $@ -lmpal -lrpe -lswlapack -lswblas -lrma -lm_slave
+	$(FC) -mieee -g -O3 -mftz -msimd -I$(MPAL_INCLUDE) -L$(MPAL_INCLUDE) -L$(LIB_DIR) -L$(XMATH_DIR) $^ -o $@ -lmpal -lrpe  -lswblas -lrma -lm_slave
 
 run: test3
 	bsub -b -I -q q_sw_expr -n 1 -cgsp 64 -share_size 10000 -host_stack 256 ./test3

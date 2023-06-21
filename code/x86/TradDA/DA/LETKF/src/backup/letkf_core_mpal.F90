@@ -2,7 +2,7 @@
 
 subroutine letkf_core2(nanals,nobsl,hxens,rdiaginv,dep,rloc,trans,overline_w,inflation_factor, pflag,trans_rate)
    
-    use mpal
+    ! use mpal
     use flogger
  
     implicit none

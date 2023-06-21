@@ -8,7 +8,7 @@ subroutine letkf_init(nx_in, ny_in, n_in, pid_in, &
     use coupler_config
     use var_info_mod
     use splitchar
-    use mpal
+    ! use mpal
 
     integer, intent(in) :: nx_in, ny_in, n_in, pid_in
     integer, intent(in) :: global_bx_in, global_by_in
@@ -84,7 +84,7 @@ subroutine letkf_init(nx_in, ny_in, n_in, pid_in, &
 
     call comm_info_init(pos2id)
 
-    call mpal_init(precision)
+    ! call mpal_init(precision)
 
 #if (DEBUG_PRINT == 1)
     print *, "LETKF id", pid, "global_bx", global_bx, "global_by", global_by

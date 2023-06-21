@@ -106,8 +106,8 @@ endif
                 call letkf_core(ens, nobsl, yb(1: ens, 1: nobsl), rdiaginv(1: nobsl), &
                 dis(1: nobsl), rloc(1: nobsl), trans, overline_w, inflation_factor, pflag)
             else
-                call letkf_core_mpal(ens, nobsl, yb(1: ens, 1: nobsl), rdiaginv(1: nobsl), &
-                dis(1: nobsl), rloc(1: nobsl), trans, overline_w, inflation_factor, pflag)
+                ! call letkf_core_mpal(ens, nobsl, yb(1: ens, 1: nobsl), rdiaginv(1: nobsl), &
+                ! dis(1: nobsl), rloc(1: nobsl), trans, overline_w, inflation_factor, pflag)
             end if
 
 #if (DEBUG == 1)
@@ -494,8 +494,8 @@ endif
                     call letkf_core(ens, nobsl, yb(1: ens, 1: nobsl), rdiaginv(1: nobsl), &
                     dis(1: nobsl), rloc(1: nobsl), trans, overline_w, inflation_factor, pflag)
                 else
-                    call letkf_core_mpal(ens, nobsl, yb(1: ens, 1: nobsl), rdiaginv(1: nobsl), &
-                    dis(1: nobsl), rloc(1: nobsl), trans, overline_w, inflation_factor, pflag)
+                    ! call letkf_core_mpal(ens, nobsl, yb(1: ens, 1: nobsl), rdiaginv(1: nobsl), &
+                    ! dis(1: nobsl), rloc(1: nobsl), trans, overline_w, inflation_factor, pflag)
                 end if
 
                 do var_iter = 1, n_var

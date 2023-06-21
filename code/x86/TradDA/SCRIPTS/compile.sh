@@ -9,7 +9,7 @@ build_dir=build
 threads=24
 
 if [[ $1 == 'intel' ]]; then
-  export CC=mpiicc CXX=sw9g++ FC=mpiifort
+  export CC=mpiicc CXX=mpiicpc FC=mpiifort
 fi
 
 if [[ $1 == 'sw' ]]; then

@@ -1,6 +1,6 @@
 def init():
 	global bias_rank
-	bias_rank = 961
+	bias_rank = 241
 	global group_num
 	group_num = 1
 	global layer_num

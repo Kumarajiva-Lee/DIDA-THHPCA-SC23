@@ -468,13 +468,13 @@ subroutine dafatm_coupling(MPI_DA_GROUP)
     do isvr = 1, svr_proc_num
       call log_notice("send data_info to svr")
       write(*,*) (global_rank + isvr)
-      call MPI_Send(data_info, 10, MPI_INT, global_rank + isvr + 3, 0, MPI_COMM_WORLD, ierr)
+      call MPI_Send(data_info, 10, MPI_INT, global_rank + isvr, 0, MPI_COMM_WORLD, ierr)
     ! Send to svr
     end do
     if (ts == 1) then
       do isvr = 1, svr_proc_num
         call log_notice("send to svr")
-        call MPI_Send(data_to_svr(((isvr - 1) * t_mem_num + 1) : (isvr * t_mem_num),:,:,:), t_send_data_sz, MPI_DOUBLE, global_rank + isvr + 3, 0, MPI_COMM_WORLD, ierr)
+        call MPI_Send(data_to_svr(((isvr - 1) * t_mem_num + 1) : (isvr * t_mem_num),:,:,:), t_send_data_sz, MPI_DOUBLE, global_rank + isvr, 0, MPI_COMM_WORLD, ierr)
       end do
     end if
     ! Recv from svr
@@ -488,9 +488,9 @@ subroutine dafatm_coupling(MPI_DA_GROUP)
       write(*,*) t_recv_data_sz
       ! write(*,*) size(data_from_svr(((isvr - 1) * t_mem_num + 1) : (isvr * t_mem_num),:,:,:))
       write(*,*) size(data_from_svr(((isvr - 1) * t_mem_num + 1) : (isvr * t_mem_num),:,:,:))
-      write(*,*) global_rank + isvr + 3
+      write(*,*) global_rank + isvr
       ! call MPI_Send(data_info, 10, MPI_INT, global_rank + isvr, 0, MPI_COMM_WORLD, ierr)
-      call MPI_Recv(data_from_svr(((isvr - 1) * t_mem_num + 1) : (isvr * t_mem_num),:,:,:), t_recv_data_sz, MPI_DOUBLE, global_rank + isvr + 3, 0, MPI_COMM_WORLD, istat, ierr)
+      call MPI_Recv(data_from_svr(((isvr - 1) * t_mem_num + 1) : (isvr * t_mem_num),:,:,:), t_recv_data_sz, MPI_DOUBLE, global_rank + isvr, 0, MPI_COMM_WORLD, istat, ierr)
       ! call MPI_Send(data_info, 10, MPI_INT, global_rank + isvr, 0, MPI_COMM_WORLD, ierr)
 
       ! Recv from svr
@@ -605,7 +605,7 @@ subroutine dafatm_coupling(MPI_DA_GROUP)
     ! call MPI_Send(data_to_svr_all(:,:,:,mid+1:nx), t_send_data_sz, MPI_DOUBLE, global_rank + 4, 0, MPI_COMM_WORLD, ierr)
     do isvr = 1, svr_proc_num
       call log_notice("send to svr")
-      call MPI_Send(data_to_svr((isvr - 1) * t_mem_num + 1 : isvr * t_mem_num,:,:,:), t_send_data_sz, MPI_DOUBLE, global_rank + isvr + 3, 0, MPI_COMM_WORLD, ierr)
+      call MPI_Send(data_to_svr((isvr - 1) * t_mem_num + 1 : isvr * t_mem_num,:,:,:), t_send_data_sz, MPI_DOUBLE, global_rank + isvr, 0, MPI_COMM_WORLD, ierr)
     end do
     !back to DNN done
     !close(12)
